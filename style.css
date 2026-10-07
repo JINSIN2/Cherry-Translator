@@ -1,0 +1,106 @@
+/* Cherry Translator */
+
+body.mt-tap-enabled #chat .custom-mt-line {
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.15s ease;
+}
+
+body.mt-tap-enabled #chat .custom-mt-line:hover,
+#chat .custom-mt-line.mt-open {
+    background-color: color-mix(in srgb, var(--SmartThemeQuoteColor, #e18a24) 12%, transparent);
+}
+
+#chat .mt-orig {
+    display: block;
+    margin: 0.15em 0 0.45em;
+    padding: 0.25em 0.6em;
+    border-left: 2px solid var(--SmartThemeQuoteColor, #e18a24);
+    font-size: 0.88em;
+    opacity: 0.75;
+    cursor: default;
+}
+
+#chat .mt-orig p {
+    display: inline;
+    margin: 0;
+}
+
+body.mt-hide-extra .mt_extra {
+    display: none !important;
+}
+
+@keyframes mt-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+}
+
+#chat .mes.mt-busy .mt_btn_translate,
+#chat .mes.mt-busy .mt_btn_retranslate,
+#mt_input_button.mt-busy {
+    animation: mt-pulse 1s ease-in-out infinite;
+    pointer-events: none;
+}
+
+#mt_input_button {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#mt_input_button:hover {
+    opacity: 1;
+}
+
+.mt-settings label {
+    display: block;
+    margin-top: 6px;
+}
+
+.mt-settings .checkbox_label {
+    display: flex;
+}
+
+.mt-settings textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.mt-settings .mt-hint {
+    display: block;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.mt-settings .mt-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.mt-settings .mt-col {
+    flex: 1 1 120px;
+    min-width: 0;
+}
+
+.mt-settings #mt_prompt_reset {
+    width: fit-content;
+    margin: 6px 0;
+}
+
+/* Flat theme-colored cherry icons (drawn with the current text color) */
+.ct-icon-cherry::before,
+.ct-icon-bubble::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.08em;
+    background-color: currentColor;
+    -webkit-mask: url('icons/cherry.svg') center / contain no-repeat;
+    mask: url('icons/cherry.svg') center / contain no-repeat;
+}
+
+.ct-icon-bubble::before {
+    -webkit-mask-image: url('icons/cherry-bubble.svg');
+    mask-image: url('icons/cherry-bubble.svg');
+}
