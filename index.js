@@ -23,8 +23,8 @@ const defaultSettings = Object.freeze({
     autoPlay: false,
     pregenerate: false,
     highlight: true,
-    quickButtons: false,
-    lineButtons: false,      // small ▶ next to each line that already has audio     // show 🔊/📜 on the message itself instead of only in the … menu
+    quickButtons: false,     // show 🔊/📜 on the message itself instead of only in the … menu
+    lineButtons: false,      // small ▶ next to each line that already has audio
     includeThoughts: true,
     preferTranslation: true, // legacy, replaced by voiceLang
     voiceLang: 'display',    // 'display' (what's on screen) | 'original' | 'translate'
@@ -1250,7 +1250,7 @@ function decorateMessage(messageId) {
     const root = document.querySelector(`#chat .mes[mesid="${messageId}"] .mes_text`);
     if (!root || root.querySelector(`.${LINE_BTN}`)) return;
     const message = SillyTavern.getContext().chat?.[messageId];
-    if (!message || message.is_user || message.is_system) return;
+    if (!message || message.is_system) return;
     const script = getStoredEntry(message)?.script;
     if (!Array.isArray(script) || !script.some(l => l?.audioKey)) return;
     script.forEach((line, index) => {
