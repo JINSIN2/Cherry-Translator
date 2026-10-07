@@ -1,13 +1,13 @@
 {
-    "display_name": "MultiCast TTS",
-    "loading_order": 20,
+    "display_name": "Cherry Translator",
+    "loading_order": 10,
     "requires": [],
     "optional": [],
     "dependencies": [],
     "js": "index.js",
     "css": "style.css",
-    "author": "Cao Cao & Claude",
-    "version": "1.8.0",
-    "homePage": "https://github.com/JINSIN2/MultiCast-TTS",
+    "author": "JINSIN2",
+    "version": "1.0.0",
+    "homePage": "https://github.com/JINSIN2/Cherry-Translator",
     "auto_update": true
 }
